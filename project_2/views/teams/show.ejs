@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Show Page for <%=team.name%></h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/teams">Team Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<h2><%=team.location%></h2>
+				<h2><%=team.name%></h2>
+			</section>
+			<section>
+				<h2>Players on this Team:</h2>
+				<ul>
+					<% for(var i = 0; i < team.players.length; i++){ %>
+						<li>
+							<a href="/players/<%=team.players[i]._id%>">
+								<%=team.players[i].name%>
+							</a>
+						</li>
+					<% } %>
+				</ul>
+			</section>
+            <section>
+					<a href="/comments/new">Add a Comment</a>
+			</section>
+
+			<section>
+				<h2>Comments:</h2>
+				<ul>
+					<% for(var i = 0; i < team.comments.length; i++){ %>
+						<li>
+							<%=team.comments[i].title%>
+							<%=team.comments[i].body%>
+						</li>
+					<form action="/comments/<%=team.comments[i]._id%>?_method=DELETE" method="post">
+				    <input type="submit" value="Delete Comment"/>
+				    </form>
+			    <a href="/comments/<%=team.comments._id%>/edit">Edit</a>
+
+
+					<% } %>
+				</ul>
+			</section>
+		</main>
+	</body>
+</html>

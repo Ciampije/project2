@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <h1>Create a Player</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/teams">Teams</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <form action="/players" method="POST">
+                <select name="teamId">
+                    <% for(var i = 0; i < teams.length; i++){ %>
+                        <option value="<%=teams[i]._id%>"><%=teams[i].name%></option>
+                    <% } %>
+                </select><br/>
+                <input type="text" name="name" placeholder="full name"/><br/>
+                <input type="text" name="position" placeholder="position"/><br/>
+                <input type="text" name="number" placeholder="number"/><br/>
+                <input type="text" name="stats" placeholder="stats"/><br/>
+                <input type="submit" value="Add Player"/><br/>
+            </form>
+        </main>
+    </body>
+</html>

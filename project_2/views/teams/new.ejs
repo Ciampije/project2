@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Add a Team</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/authors">Teams Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<form action="/teams" method="post">
+				<input type="text" name="location" placeholder="location"/><br/>
+             	<input type="text" name="name" placeholder="name"/><br/>
+                <input type="text" name="record" placeholder="record" /><br/>
+                <input type="text" name="championships" placeholder="championships"/><br/>
+                <input type="submit" value="Add Team"/>
+			</form>
+		</main>
+	</body>
+</html>
