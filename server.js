@@ -4,19 +4,19 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override')
 var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/basketball_app';
-port = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 
-var teamsController = require('./controllers/teams.js');
+var teamsController = require('./project_2/controllers/teams.js');
 app.use('/teams', teamsController);
 
-var playersController = require('./controllers/players.js');
+var playersController = require('./project_2/controllers/players.js');
 app.use('/players', playersController);
 
-var commentsController = require('./controllers/comments.js');
+var commentsController = require('./project_2/controllers/comments.js');
 app.use('/comments', commentsController);
 
 
