@@ -5,6 +5,7 @@ var Comments = require('./comments.js');
 var teamSchema = mongoose.Schema({
     location: String,
 	name: String,
+    conference: String,
     record: String,
     championships: Number,
     img: String,
