@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Team = require('../models/teams.js');
-var Players = require('../models/players.js');
+var Player = require('../models/players.js');
 var Comments = require('../models/comments.js');
 
 router.get('/', function(req, res){
@@ -34,8 +34,8 @@ router.get('/:id', function(req, res){
 router.delete('/:id', function(req, res){
 	Team.findByIdAndRemove(req.params.id, function(err, foundTeam){
 		var playerIds = [];
-		for(var i = 0; i <foundTeam.player.length; i++){
-			playerIds.push(foundTeam.player[i]._id)
+		for(var i = 0; i <foundTeam.players.length; i++){
+			playerIds.push(foundTeam.players[i]._id)
 		}
 		Player.remove(
 			{
