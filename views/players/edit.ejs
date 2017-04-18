@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<h1>Edit <%=player.name%>'s Info</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="/players">Players Index</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<h2>Player Attributes:</h2>
+			<form action="/players/<%=player._id%>?_method=PUT" method="post">
+				<input type="text" name="name" value="<%=player.name%>"/><br/>
+				<input type="text" name="position" value="<%=player.position%>"/><br/>
+                <input type="text" name="number" value="<%=player.number%>"/><br/>
+                <input type="text" name="img" value="<%=player.img%>"/><br/>
+				<input type="submit" value="Update Player"/>
+			</form>
+		</main>
+	</body>
+</html>

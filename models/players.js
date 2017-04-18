@@ -4,7 +4,7 @@ var playerSchema = mongoose.Schema({
 	name:String,
 	position:String,
     number: Number,
-    stats: String
+    img: String
 });
 
 var Player = mongoose.model('Player', playerSchema);

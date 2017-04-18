@@ -12,6 +12,7 @@ router.get('/', function(req, res){
 	})
 });
 
+
 router.post('/', function(req, res){
 	Team.create(req.body, function(err, createdTeam){
 		res.redirect('/teams');
@@ -32,19 +33,33 @@ router.get('/:id', function(req, res){
 
 router.delete('/:id', function(req, res){
 	Team.findByIdAndRemove(req.params.id, function(err, foundTeam){
-		var commentIds = [];
-		for(var i = 0; i <foundTeam.comments.length; i++){
-			commentIds.push(foundTeam.comments[i]._id)
+		var playerIds = [];
+		for(var i = 0; i <foundTeam.player.length; i++){
+			playerIds.push(foundTeam.player[i]._id)
 		}
-		Comments.remove(
+		Player.remove(
 			{
 				_id : {
-					$in: commentIds
+					$in: playerIds
 				}
 			}, function(err, data){
 				res.redirect('/teams');
 			}
 		);
+	});
+});
+
+router.get('/:id/edit', function(req, res){
+	Team.findById(req.params.id, function(err, foundTeam){
+		res.render('teams/edit.ejs', {
+			team: foundTeam
+		});
+	});
+});
+
+router.put('/:id', function(req, res){
+	Team.findByIdAndUpdate(req.params.id, req.body, function(){
+		res.redirect('/teams');
 	});
 });
 

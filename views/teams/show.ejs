@@ -20,6 +20,7 @@
 		</header>
 		<main>
 			<section>
+				<img src="<%=team.img%>">
 				<h2><%=team.location%></h2>
 				<h2><%=team.name%></h2>
 			</section>
@@ -35,26 +36,8 @@
 					<% } %>
 				</ul>
 			</section>
-            <section>
-					<a href="/comments/new">Add a Comment</a>
-			</section>
-
 			<section>
-				<h2>Comments:</h2>
-				<ul>
-					<% for(var i = 0; i < team.comments.length; i++){ %>
-						<li>
-							<%=team.comments[i].title%>
-							<%=team.comments[i].body%>
-						</li>
-					<form action="/comments/<%=team.comments[i]._id%>?_method=DELETE" method="post">
-				    <input type="submit" value="Delete Comment"/>
-				    </form>
-			    <a href="/comments/<%=team.comments._id%>/edit">Edit</a>
-
-
-					<% } %>
-				</ul>
+			<a href="/teams/<%=team._id%>/edit">Edit this Team</a>
 			</section>
 		</main>
 	</body>

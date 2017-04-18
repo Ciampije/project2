@@ -42,5 +42,36 @@ router.get('/:id', function(req, res){
 	});
 });
 
+router.delete('/:id', function(req, res){
+	Player.findByIdAndRemove(req.params.id, function(){
+		Team.findOne({'players._id': req.params.id}, function(err, foundTeam){
+			foundTeam.players.id(req.params.id).remove();
+			foundTeam.save(function(err, savedTeam){
+				res.redirect('/players');
+			});
+		});
+	});
+});
+
+router.get('/:id/edit', function(req, res){
+	Player.findById(req.params.id, function(err, foundPlayer){
+		res.render('players/edit.ejs', {
+			player: foundPlayer
+		});
+	});
+});
+
+router.put('/:id', function(req, res){
+	Player.findByIdAndUpdate(req.params.id, req.body,{new:true}, function(err, updatedPlayer){
+		Team.findOne({'players._id': req.params.id}, function(err, foundTeam){
+			foundTeam.players.id(req.params.id).remove();
+			foundTeam.players.push(updatedPlayer);
+			foundTeam.save(function(err, data){
+				res.redirect('/players');
+			});
+		});
+	});
+});
+
 
 module.exports = router;
