@@ -1,0 +1,28 @@
+main {
+    background-color: teal;
+    /*background-image: url('https://s-media-cache-ak0.pinimg.com/originals/b1/73/2d/b1732db3ecf93618c9bee0e3b7cd7373.jpg');
+    background-size: cover;*/
+}
+
+.bottom img {
+    width: 100%;
+    height 100%;
+}
+.court img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.teamlogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+.teamlogo img {
+    height: 200px;
+    width: 200px;
+    margin: 30px 30px 20px 30px;
+    position: relative;
+}

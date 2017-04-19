@@ -3,30 +3,27 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link href="/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	</head>
 	<body>
 		<header>
-			<h1>Teams</h1>
+			<h1>NBA Playoffs Wiki</h1>
 			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/teams/new">Create a new Team</a>
-					</li>
-				</ul>
+				<div class="w3-bar w3-black">
+					<a href="/" class="w3-bar-item w3-button w3-hover-red">Home</a>
+					<a href="/teams" class="w3-bar-item w3-button w3-hover-red">Teams</a>
+					<a href="/players" class="w3-bar-item w3-button w3-hover-red">Players</a>
+				</div>
 			</nav>
 		</header>
-		<main>
-			<h2>List of Teams</h2>
-			<ul>
+		<main class ="court">
+			<img src="http://cubtab.com/daut/as/f/t/the-basketball-court-thinglink_basket-court_home-decor_affordable-home-decor-decorators-catalog-decorating-ideas-decore-coupon-code-fleur-de-lis-magazines-stores-yosemite.png" alt="">
+			<div class="teamlogo">
 				<% for(var i = 0; i < teams.length; i++){ %>
-					<li>
-						<a href="/teams/<%=teams[i]._id%>"><%=teams[i].name%></a>
-					</li>
+					<a href="/teams/<%=teams[i]._id%>"><img src="<%=teams[i].img%>"</a>
 				<% } %>
-			</ul>
+			</div>
 		</main>
 	</body>
 </html>

@@ -6,6 +6,7 @@ var methodOverride = require('method-override');
 var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/basketball_app';
 var port = process.env.PORT || 3000;
 
+app.use( express.static ( 'public' ) );
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
