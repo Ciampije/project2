@@ -1,7 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee')
+
 main {
-    background-color: teal;
+    background-color: white;
     /*background-image: url('https://s-media-cache-ak0.pinimg.com/originals/b1/73/2d/b1732db3ecf93618c9bee0e3b7cd7373.jpg');
     background-size: cover;*/
+}
+ul {
+    list-style: none;
+}
+body h1{
+    font-family: 'Bungee';
+}
+body a{
+    font-family: 'Bungee';
+}
+body p {
+    font-family: 'Bungee', cursive;
+}
+body h2 {
+    font-family: 'Bungee';
 }
 
 .bottom img {
@@ -25,4 +42,53 @@ main {
     width: 200px;
     margin: 30px 30px 20px 30px;
     position: relative;
+}
+
+.citypic img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.info img {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.info {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.edits {
+    position: relative;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 2px 4px 8px 2px black;
+    width:75%;
+    height:75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card img {
+    width:60%;
+    margin-top: 50px;
+    display: block;
+
+}
+
+/* Add some padding inside the card container */
+.container {
+
 }

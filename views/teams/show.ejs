@@ -3,43 +3,38 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link href="/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
 	</head>
 	<body>
 		<header>
-			<h1>Show Page for <%=team.name%></h1>
+			<h1><%=team.location%> <%=team.name%></h1>
 			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/teams">Team Index</a>
-					</li>
-				</ul>
+				<div class="w3-bar w3-black">
+					<a href="/" class="w3-bar-item w3-button w3-hover-red">Home</a>
+					<a href="/teams" class="w3-bar-item w3-button w3-hover-red">Teams</a>
+				</div>
 			</nav>
 		</header>
-		<main>
-			<section>
+		<main class="citypic">
+			<img src="http://cubtab.com/daut/as/f/t/the-basketball-court-thinglink_basket-court_home-decor_affordable-home-decor-decorators-catalog-decorating-ideas-decore-coupon-code-fleur-de-lis-magazines-stores-yosemite.png" alt="">
+			<section class="info">
 				<img src="<%=team.img%>">
-				<h2><%=team.location%></h2>
-				<h2><%=team.name%></h2>
-			</section>
-			<section>
+				<h2>2016-2017 Record: <%=team.record%></h2>
+				<h2>Team Championships: <%=team.championships%></h2>
 				<h2>Players on this Team:</h2>
-				<ul>
+
 					<% for(var i = 0; i < team.players.length; i++){ %>
-						<li>
+
 							<a href="/players/<%=team.players[i]._id%>">
 								<%=team.players[i].name%>
 							</a>
-						</li>
+
 					<% } %>
-				</ul>
 			</section>
-			<section>
-			<a href="/teams/<%=team._id%>/edit">Edit this Team</a>
-			</section>
-			<section>
+			<section class="edits">
+				<a href="/teams/<%=team._id%>/edit">Edit this Team</a>
 				<form action="/teams/<%=team._id%>?_method=DELETE" method="post">
 					<input type="submit" value="Delete Team"/>
 				</form>
