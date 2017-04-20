@@ -3,31 +3,33 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link href="/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
 	</head>
 	<body>
 		<header>
-			<h1>Players</h1>
+			<h1>NBA Playoffs Wiki</h1>
 			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/players/new">Create a new Player</a>
-					</li>
-				</ul>
+				<div class="w3-bar w3-black">
+					<a href="/" class="w3-bar-item w3-button w3-hover-red">Home</a>
+					<a href="/teams" class="w3-bar-item w3-button w3-hover-red">Teams</a>
+					<a href="/players" class="w3-bar-item w3-button w3-hover-red">Players</a>
+				</div>
 			</nav>
 		</header>
-		<main>
-			<h2>List of Players</h2>
-			<ul id="allThePlayers">
-				<% for(var i = 0; i < players.length; i++){ %>
-					<% players.sort(); %>
-					<li>
-						<a href="/players/<%=players[i]._id%>"><%=players[i].name%></a>
-					</li>
-				<% } %>
-			</ul>
+		<main class ="citypic">
+			<section class="info">
+				<h2>List of Players</h2>
+				<ul>
+					<% for(var i = 0; i < players.length; i++){ %>
+						<li>
+							<a href="/players/<%=players[i]._id%>"><%=players[i].name%></a>
+						</li>
+					<% } %>
+				</ul>
+			</section>
+			<a href="/players/new">Create a new Player</a>
 		</main>
 	</body>
 </html>

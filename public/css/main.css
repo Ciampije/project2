@@ -99,3 +99,11 @@ body h2 {
 .deledit {
     position: relative;
 }
+
+.playercourt {
+    position: absolute;
+}
+
+.alltheplayers{
+    position: relative;
+}

@@ -3,21 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <link href="/css/main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee">
     </head>
     <body>
         <header>
-            <h1>Create a Player</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/teams">Teams</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+			<h1>Create a Player</h1>
+			<nav>
+				<div class="w3-bar w3-black">
+					<a href="/" class="w3-bar-item w3-button w3-hover-red">Home</a>
+					<a href="/teams" class="w3-bar-item w3-button w3-hover-red">Teams</a>
+					<a href="/players" class="w3-bar-item w3-button w3-hover-red">Players</a>
+				</div>
+			</nav>
+		</header>
         <main>
             <form action="/players" method="POST">
                 <select name="teamId">
