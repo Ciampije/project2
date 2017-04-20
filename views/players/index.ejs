@@ -20,8 +20,9 @@
 		</header>
 		<main>
 			<h2>List of Players</h2>
-			<ul>
+			<ul id="allThePlayers">
 				<% for(var i = 0; i < players.length; i++){ %>
+					<% players.sort(); %>
 					<li>
 						<a href="/players/<%=players[i]._id%>"><%=players[i].name%></a>
 					</li>
